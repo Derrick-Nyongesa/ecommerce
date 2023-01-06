@@ -1,10 +1,13 @@
-import Head from "next/head";
-import Image from "next/image";
+import Product from "../components/Product";
+import HeroBanner from "../components/HeroBanner";
+import FooterBanner from "../components/FooterBanner";
 
 export default function Home() {
   return (
-    <>
-      <h1>eCommerce</h1>
-    </>
+    <div>
+      <HeroBanner></HeroBanner>
+      <Product></Product>
+      <FooterBanner></FooterBanner>
+    </div>
   );
 }
