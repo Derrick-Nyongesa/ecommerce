@@ -15,7 +15,7 @@ export default function Home({ products, bannerData }) {
         ))}
       </div>
 
-      <FooterBanner></FooterBanner>
+      <FooterBanner footerBanner={bannerData && bannerData[0]}></FooterBanner>
     </div>
   );
 }
