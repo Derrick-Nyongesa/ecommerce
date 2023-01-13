@@ -577,6 +577,11 @@ span.text-red {
   color: green;
   font-size: 40px;
 }
+
+.icon_ {
+  color: red;
+  font-size: 40px;
+}
 .success h2 {
   text-transform: capitalize;
   margin-top: 15px 0px;
