@@ -754,3 +754,18 @@ span.text-red {
     margin: auto;
   }
 }
+
+/* ._button_ {
+  width: 50px;
+  height: 20px;
+} */
+
+._logout_ {
+  font-size: 21px;
+  color: red;
+}
+
+._userImage {
+  width: 40px;
+  height: 40px;
+}
