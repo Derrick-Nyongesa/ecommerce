@@ -14,6 +14,7 @@ function Layout({ children }) {
           sizes="32x32"
           href="/android-chrome-256x256.png"
         ></link>
+        <script src="https://cdn.tailwindcss.com"></script>
       </Head>
       <header>
         <Navbar />
