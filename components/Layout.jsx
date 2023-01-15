@@ -7,7 +7,13 @@ function Layout({ children }) {
   return (
     <div className="layout">
       <Head>
-        <title>JS Mastery Store</title>
+        <title>JSM-Headphones</title>
+        <link
+          rel="icon"
+          type="image/png"
+          sizes="32x32"
+          href="/android-chrome-256x256.png"
+        ></link>
       </Head>
       <header>
         <Navbar />

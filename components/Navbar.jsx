@@ -7,10 +7,8 @@ import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import { createOrGetUser } from "../utils/index";
 import useAuthStore from "../store/authStore";
 import { AiOutlineLogout } from "react-icons/ai";
-import Image from "next/image";
 
 function Navbar() {
-  // const user = false;
   const { userProfile, addUser, removeUser } = useAuthStore();
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   return (
