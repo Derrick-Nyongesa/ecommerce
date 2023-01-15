@@ -10,7 +10,7 @@ export default function Home({ products, bannerData }) {
     <div>
       <div>
         {userProfile ? (
-          <div>
+          <div style={{ marginTop: "80px" }}>
             <div>
               <HeroBanner
                 heroBanner={bannerData.length && bannerData[0]}
@@ -32,7 +32,7 @@ export default function Home({ products, bannerData }) {
             ></FooterBanner>
           </div>
         ) : (
-          <main style={{ marginLeft: "0px" }}>
+          <main style={{ marginLeft: "0px", marginTop: "80px" }}>
             <div
               className="relative pt-1 pb-28 flex content-center items-center justify-center"
               styleName="min-height: 95vh"

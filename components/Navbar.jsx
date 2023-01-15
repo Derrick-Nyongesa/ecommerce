@@ -13,7 +13,7 @@ function Navbar() {
   const { userProfile, addUser, removeUser } = useAuthStore();
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   return (
-    <div className="navbar-container  flex justify-between items-center  border-gray-200 py-2 mb-5">
+    <div className="  flex justify-between items-center  border-gray-200 py-2  _navbar">
       <p className=" ">
         <Link href="/">
           <img src="assets/logo.png" alt="" layout="responsive" />
@@ -22,6 +22,20 @@ function Navbar() {
       <div>
         {userProfile && (
           <div className="flex gap-5 md:gap-10">
+            <div className="relative hidden md:block">
+              <div className="relative  lg:max-w-sm">
+                <select className="w-full p-2.5 text-gray-500 bg-white border rounded-md shadow-sm outline-none appearance-none focus:border-red-500">
+                  <option>Help Center</option>
+                  <option>Shipping & Delivery Information</option>
+                  <option>Returns & Refunds</option>
+                  <option>Warranty Policy</option>
+                  <option>Order Tracking</option>
+                  <option>Wishlist</option>
+                  <option>Customer Support</option>
+                </select>
+              </div>
+            </div>
+
             <div>
               <img
                 src={userProfile.image}
