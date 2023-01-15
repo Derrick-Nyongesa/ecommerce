@@ -12,7 +12,7 @@ function Layout({ children }) {
           rel="icon"
           type="image/png"
           sizes="32x32"
-          href="/android-chrome-256x256.png"
+          href="/icon_.jpg"
         ></link>
         <script src="https://cdn.tailwindcss.com"></script>
       </Head>

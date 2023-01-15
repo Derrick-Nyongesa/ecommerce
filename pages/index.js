@@ -11,7 +11,7 @@ export default function Home({ products, bannerData }) {
       <div>
         {userProfile ? (
           <div>
-            <div style={{ marginTop: "50px" }}>
+            <div>
               <HeroBanner
                 heroBanner={bannerData.length && bannerData[0]}
               ></HeroBanner>
@@ -34,7 +34,7 @@ export default function Home({ products, bannerData }) {
         ) : (
           <main style={{ marginLeft: "0px" }}>
             <div
-              className="relative pt-16 pb-32 flex content-center items-center justify-center"
+              className="relative pt-1 pb-28 flex content-center items-center justify-center"
               styleName="min-height: 95vh"
             >
               <div

@@ -83,7 +83,7 @@ span.text-red {
   font-size: 18px;
 }
 .cart-icon {
-  font-size: 25px;
+  font-size: 35px;
   color: gray;
   cursor: pointer;
   position: relative;
@@ -97,6 +97,7 @@ span.text-red {
 .cart-item-qty {
   position: absolute;
   right: -8px;
+  top: 8px;
   font-size: 12px;
   color: #eee;
   background-color: #f02d34;
@@ -773,10 +774,21 @@ span.text-red {
 
 ._logout_ {
   font-size: 21px;
-  color: red;
+  color: #fff;
 }
 
 ._userImage {
   width: 40px;
   height: 40px;
+}
+
+._image {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+._button {
+  background: #f02d34;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 10px;
 }
