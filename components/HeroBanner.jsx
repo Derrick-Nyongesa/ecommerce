@@ -14,13 +14,13 @@ function HeroBanner({ heroBanner }) {
           alt="headphones"
           className="hero-banner-image"
         />
-        <div>
-          <Link href={`/product/${heroBanner.product}`}>
-            <button type="button">{heroBanner.buttonText}</button>
-          </Link>
+        <div className="banner-desc">
           <div className="desc">
-            <h5>Description</h5>
-            <p>{heroBanner.desc}</p>
+            <Link href="/">
+              <button type="button">{heroBanner.buttonText}</button>
+            </Link>
+            <br />
+            <p style={{ color: "white" }}>{heroBanner.desc}</p>
           </div>
         </div>
       </div>

@@ -39,7 +39,7 @@ function Navbar() {
             <div>
               <img
                 src={userProfile.image}
-                alt=""
+                alt={userProfile.userName}
                 className="_userImage rounded-full"
               />
             </div>
