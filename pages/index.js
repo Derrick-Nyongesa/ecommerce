@@ -26,10 +26,6 @@ export default function Home({ products, bannerData }) {
                 <Product key={product._id} product={product} />
               ))}
             </div>
-
-            <FooterBanner
-              footerBanner={bannerData && bannerData[0]}
-            ></FooterBanner>
           </div>
         ) : (
           <main style={{ marginLeft: "0px", marginTop: "80px" }}>
