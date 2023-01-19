@@ -581,7 +581,7 @@ span.text-red {
 .cancel {
   width: 1000px;
   margin: auto;
-  margin-top: 160px;
+  margin-top: 90px;
   background-color: #dcdcdc;
   padding: 50px;
   border-radius: 15px;
@@ -808,4 +808,25 @@ span.text-red {
   /* height: 50px; */
   background-color: #fff;
   padding: 20px;
+}
+
+._searchBar {
+  border-color: rgb(134, 134, 134);
+  color: #ea384d;
+}
+
+._searchIcon {
+  color: #ea384d;
+}
+
+.success_ {
+  width: 1000px;
+  margin: auto;
+  background-color: #dcdcdc;
+  padding: 50px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
