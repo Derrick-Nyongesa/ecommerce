@@ -3,6 +3,9 @@ import { client } from "../lib/client";
 import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import { createOrGetUser } from "../utils/index";
 import useAuthStore from "../store/authStore";
+import Discover from "../components/Discover";
+import { BASE_URL } from "../utils/index";
+import axios from "axios";
 
 export default function Home({ products, bannerData }) {
   const { userProfile, addUser, removeUser } = useAuthStore();
@@ -20,6 +23,9 @@ export default function Home({ products, bannerData }) {
             <div className="products-heading">
               <h2>Best Seller Products</h2>
               <p>speaker There are many variations passages</p>
+            </div>
+            <div>
+              <Discover></Discover>
             </div>
             <div className="products-container">
               {products?.map((product) => (
@@ -166,13 +172,20 @@ export default function Home({ products, bannerData }) {
   );
 }
 
-export const getServerSideProps = async () => {
-  const query = '*[_type == "product"]';
-  const products = await client.fetch(query);
+export const getServerSideProps = async ({ query: { category } }) => {
+  const prod = `*[_type == "product"]`;
   const bannerQuery = '*[_type == "banner"]';
   const bannerData = await client.fetch(bannerQuery);
+  const cate = `*[_type == "product"  && category match '${category}*']`;
+
+  let products = null;
+  if (category) {
+    products = await client.fetch(cate);
+  } else {
+    products = await client.fetch(prod);
+  }
 
   return {
-    props: { products, bannerData },
+    props: { bannerData, products },
   };
 };
