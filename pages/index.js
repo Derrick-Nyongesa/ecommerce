@@ -1,11 +1,9 @@
 import { Product, HeroBanner, FooterBanner } from "../components";
 import { client } from "../lib/client";
-import { GoogleLogin, googleLogout } from "@react-oauth/google";
+import { GoogleLogin } from "@react-oauth/google";
 import { createOrGetUser } from "../utils/index";
 import useAuthStore from "../store/authStore";
 import Discover from "../components/Discover";
-import { BASE_URL } from "../utils/index";
-import axios from "axios";
 
 export default function Home({ products, bannerData }) {
   const { userProfile, addUser, removeUser } = useAuthStore();
@@ -25,12 +23,17 @@ export default function Home({ products, bannerData }) {
               <p>speaker There are many variations passages</p>
             </div>
             <div>
-              <Discover></Discover>
-            </div>
-            <div className="products-container">
-              {products?.map((product) => (
-                <Product key={product._id} product={product} />
-              ))}
+              <div>
+                <Discover></Discover>
+              </div>
+              <div className="h-[2vh] overflow-hidden xl:hover:overflow-auto"></div>
+              <div className=" overflow-auto h-[88vh] w-[95vw] ">
+                <div className="products-container">
+                  {products?.map((product) => (
+                    <Product key={product._id} product={product} />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         ) : (
