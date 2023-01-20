@@ -20,7 +20,7 @@ function ProductDetails({ product, products }) {
     setShowCart(true);
   };
   return (
-    <div>
+    <div style={{ marginTop: "80px" }}>
       <div className="product-detail-container">
         <div>
           <div className="image-container">
