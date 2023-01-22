@@ -12,6 +12,7 @@ import axios from "axios";
 import { BASE_URL } from "../../utils";
 import useAuthStore from "../../store/authStore";
 import { useRouter } from "next/router";
+import Comment from "../../components/Comment";
 
 function ProductDetails({ product, products }) {
   const { image, name, details, price, comments } = product;
@@ -21,12 +22,6 @@ function ProductDetails({ product, products }) {
   const [isPostingComment, setIsPostingComment] = useState(false);
   const [post, setPost] = useState(product);
   const { userProfile } = useAuthStore();
-
-  const router = useRouter();
-
-  const refreshData = () => {
-    router.replace(router.asPath);
-  };
 
   const addComment = async (e) => {
     e.preventDefault();
@@ -40,9 +35,6 @@ function ProductDetails({ product, products }) {
       setPost({ ...post, comments: res.data.comments });
       setComment("");
       setIsPostingComment(false);
-      if (res.status < 300) {
-        refreshData();
-      }
     }
   };
 
@@ -116,7 +108,14 @@ function ProductDetails({ product, products }) {
           </div>
         </div>
       </div>
-      <div style={{ marginTop: "50px" }}>
+      <Comment
+        comment={comment}
+        setComment={setComment}
+        addComment={addComment}
+        comments={post.comments}
+        isPostingComment={isPostingComment}
+      />
+      {/* <div style={{ marginTop: "50px" }}>
         {post.comments?.length ? (
           comments?.map((item) => (
             <>
@@ -141,7 +140,7 @@ function ProductDetails({ product, products }) {
         <button className="text-md text-gray-400" onClick={addComment}>
           {isPostingComment ? "Commenting..." : "Comment"}
         </button>
-      </form>
+      </form> */}
 
       <div className="maylike-products-wrapper">
         <h2>You may also like</h2>
