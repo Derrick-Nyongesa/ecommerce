@@ -12,7 +12,7 @@ function HeroBanner({ heroBanner }) {
         <img
           src={urlFor(heroBanner.image)}
           alt="headphones"
-          className="hero-banner-image"
+          className="hero-banner-image animated bounceInUp"
         />
         <div className="banner-desc">
           <div className="desc">
@@ -20,7 +20,9 @@ function HeroBanner({ heroBanner }) {
               <button type="button">{heroBanner.buttonText}</button>
             </Link>
             <br />
-            <p style={{ color: "white" }}>{heroBanner.desc}</p>
+            <p style={{ color: "white" }} className="fade-in-text">
+              {heroBanner.desc}
+            </p>
           </div>
         </div>
       </div>

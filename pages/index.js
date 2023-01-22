@@ -68,7 +68,7 @@ export default function Home({ products, bannerData }) {
               </div>
               <div className="h-[2vh] overflow-hidden xl:hover:overflow-auto"></div>
               <div className=" overflow-auto h-[88vh] w-[95vw] ">
-                <div className="products-container">
+                <div className="products-container ">
                   {products.slice(0, postNum).map((product) => (
                     <Product key={product._id} product={product} />
                   ))}
