@@ -41,5 +41,11 @@ export default {
       title: 'Category',
       type: 'string',
     },
+    {
+      name: 'comments',
+      title: 'Comments',
+      type: 'array',
+      of: [{type: 'comment'}],
+    },
   ],
 }
