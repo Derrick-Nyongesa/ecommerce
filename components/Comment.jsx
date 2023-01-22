@@ -14,9 +14,9 @@ function Comment({
         <div className="">
           {comments?.length > 0 ? (
             comments?.map((item, idx) => (
-              <>
+              <div key={idx}>
                 <p className="">{item.comment}</p>
-              </>
+              </div>
             ))
           ) : (
             <div>no comments</div>

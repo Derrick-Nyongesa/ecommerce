@@ -33,7 +33,9 @@ export default function Home({ products, bannerData }) {
 
             <div className="products-heading">
               <h2>Best Seller Products</h2>
-              <p>speaker There are many variations passages</p>
+              <p>
+                Online Shopping with JSM Heaphones - Africa's No 1 Online Store
+              </p>
             </div>
             <div>
               <div className="  " style={{ margin: "auto", width: "30%" }}>
@@ -71,10 +73,7 @@ export default function Home({ products, bannerData }) {
           </div>
         ) : (
           <main style={{ marginLeft: "0px", marginTop: "80px" }}>
-            <div
-              className="relative pt-1 pb-28 flex content-center items-center justify-center"
-              styleName="min-height: 95vh"
-            >
+            <div className="relative pt-1 pb-28 flex content-center items-center justify-center">
               <div
                 className="absolute top-0 w-full h-full bg-top bg-cover"
                 style={{

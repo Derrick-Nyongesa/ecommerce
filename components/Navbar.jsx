@@ -16,7 +16,7 @@ function Navbar() {
     <div className="  flex justify-between items-center  border-gray-200 py-2  _navbar">
       <p className=" ">
         <Link href="/">
-          <img src="assets/logo.png" alt="" layout="responsive" />
+          <img src="assets/logo.png" alt="Logo" layout="responsive" />
         </Link>
       </p>
       <div>
