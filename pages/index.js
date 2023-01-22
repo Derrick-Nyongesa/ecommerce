@@ -11,7 +11,12 @@ import { BiSearch } from "react-icons/bi";
 export default function Home({ products, bannerData }) {
   const { userProfile, addUser, removeUser } = useAuthStore();
   const [searchValue, setSearchValue] = useState("");
+  const [postNum, setPostNum] = useState(4);
   const router = useRouter();
+
+  function handleClick() {
+    setPostNum((prevPostNum) => prevPostNum + 4); // 3 is the number of posts you want to load per click
+  }
 
   const handleSearch = (e) => {
     e.preventDefault();
@@ -64,9 +69,14 @@ export default function Home({ products, bannerData }) {
               <div className="h-[2vh] overflow-hidden xl:hover:overflow-auto"></div>
               <div className=" overflow-auto h-[88vh] w-[95vw] ">
                 <div className="products-container">
-                  {products?.map((product) => (
+                  {products.slice(0, postNum).map((product) => (
                     <Product key={product._id} product={product} />
                   ))}
+                </div>
+                <div className="flex gap-10 flex-wrap items-center justify-center">
+                  <button onClick={handleClick} className="_load">
+                    Load More...
+                  </button>
                 </div>
               </div>
             </div>
