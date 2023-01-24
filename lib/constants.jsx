@@ -3,7 +3,7 @@ export const topics = [
     name: "Headphones",
   },
   {
-    name: "Airbuds",
+    name: "Earbuds",
   },
   {
     name: "Earphones",

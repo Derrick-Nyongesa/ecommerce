@@ -4,6 +4,7 @@ import {
   AiOutlinePlus,
   AiFillStar,
   AiOutlineStar,
+  AiOutlineLeft,
 } from "react-icons/ai";
 import { client, urlFor } from "../../lib/client";
 import { Product } from "../../components";
@@ -22,6 +23,7 @@ function ProductDetails({ product, products }) {
   const [isPostingComment, setIsPostingComment] = useState(false);
   const [post, setPost] = useState(product);
   const { userProfile } = useAuthStore();
+  const router = useRouter();
 
   const addComment = async (e) => {
     e.preventDefault();
@@ -45,7 +47,15 @@ function ProductDetails({ product, products }) {
   };
   return (
     <div style={{ marginTop: "80px" }}>
-      <div className="product-detail-container">
+      <button
+        type="button"
+        className="cart-heading"
+        onClick={() => router.back()}
+      >
+        <AiOutlineLeft />
+        <span className="heading">Go Back</span>
+      </button>
+      <div className="product-detail-container ">
         <div>
           <div className="image-container">
             <img
@@ -68,23 +78,32 @@ function ProductDetails({ product, products }) {
         </div>
 
         <div className="product-detail-desc">
-          <h1>{name}</h1>
-          <div className="reviews">
+          <h1 style={{ fontWeight: "bold", fontSize: "1.5rem" }}>{name}</h1>
+          <div className="reviews ">
             <div>
               <AiFillStar />
+            </div>
+            <div>
               <AiFillStar />
+            </div>
+            <div>
               <AiFillStar />
+            </div>
+            <div>
               <AiFillStar />
+            </div>
+
+            <div>
               <AiOutlineStar />
             </div>
-            <p>(20)</p>
+            <p>(20 verified ratings)</p>
           </div>
-          <h4>Details: </h4>
-          <p>{details}</p>
+
           <p className="price">${price}</p>
-          <div className="quantity">
+          <p style={{ color: "gray", fontSize: "12px" }}>Few Units left</p>
+          <div className="">
             <h3>Quantity:</h3>
-            <p className="quantity-desc">
+            <div className="quantity flex justify-between items-center">
               <span className="minus" onClick={decQty}>
                 <AiOutlineMinus />
               </span>
@@ -92,7 +111,7 @@ function ProductDetails({ product, products }) {
               <span className="plus" onClick={incQty}>
                 <AiOutlinePlus />
               </span>
-            </p>
+            </div>
           </div>
           <div className="buttons">
             <button
@@ -108,13 +127,20 @@ function ProductDetails({ product, products }) {
           </div>
         </div>
       </div>
-      <Comment
-        comment={comment}
-        setComment={setComment}
-        addComment={addComment}
-        comments={post.comments}
-        isPostingComment={isPostingComment}
-      />
+      <p style={{ fontSize: "1.6rem", textAlign: "center" }}>Product Details</p>
+      <p style={{ color: "#324d67", marginLeft: "20px", marginRight: "20px" }}>
+        {details}
+      </p>
+      <div>
+        <Comment
+          comment={comment}
+          setComment={setComment}
+          addComment={addComment}
+          comments={post.comments}
+          isPostingComment={isPostingComment}
+        />
+      </div>
+
       {/* <div style={{ marginTop: "50px" }}>
         {post.comments?.length ? (
           comments?.map((item) => (
