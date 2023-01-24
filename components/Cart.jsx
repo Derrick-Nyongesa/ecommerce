@@ -6,7 +6,7 @@ import {
   AiOutlineLeft,
   AiOutlineShopping,
 } from "react-icons/ai";
-import { TiDeleteOutline } from "react-icons/ti";
+import { MdDelete } from "react-icons/md";
 import toast from "react-hot-toast";
 import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../lib/client";
@@ -83,11 +83,24 @@ function Cart() {
                 <div className="item-desc">
                   <div className="flex top">
                     <h5>{item.name}</h5>
+                  </div>
+                  <div className="flex">
+                    <p style={{ color: "#000" }}>({item.quantity}) items</p>
                     <h4>${item.price}</h4>
                   </div>
+                  <div>
+                    <button
+                      type="button"
+                      className="remove-item"
+                      onClick={() => onRemove(item)}
+                    >
+                      <MdDelete />
+                    </button>
+                  </div>
+
                   <div className="flex bottom">
                     <div>
-                      <p className="quantity-desc">
+                      {/* <p className="quantity-desc">
                         <span
                           className="minus"
                           onClick={() =>
@@ -107,15 +120,8 @@ function Cart() {
                         >
                           <AiOutlinePlus />
                         </span>
-                      </p>
+                      </p> */}
                     </div>
-                    <button
-                      type="button"
-                      className="remove-item"
-                      onClick={() => onRemove(item)}
-                    >
-                      <TiDeleteOutline />
-                    </button>
                   </div>
                 </div>
               </div>
@@ -125,7 +131,9 @@ function Cart() {
           <div className="cart-bottom">
             <div className="total">
               <h3>Total:</h3>
-              <h3>${totalPrice}</h3>
+              <h3 style={{ color: "#f02d34", fontWeight: "bold" }}>
+                ${totalPrice}
+              </h3>
             </div>
             <div className="btn-container">
               <button type="button" className="btn" onClick={handleCheckout}>
