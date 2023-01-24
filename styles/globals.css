@@ -849,6 +849,15 @@ span.text-red {
 ._load:hover {
   transform: scale(1.1, 1.1);
 }
+
+.card {
+  width: 50%;
+  margin: auto;
+  background-color: #ebebeb;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
 /* ======================================================================================= */
 /*                                      ANIMATIONS                                        */
 /* ===================================================================================== */

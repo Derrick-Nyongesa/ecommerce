@@ -131,7 +131,7 @@ function ProductDetails({ product, products }) {
       <p style={{ color: "#324d67", marginLeft: "20px", marginRight: "20px" }}>
         {details}
       </p>
-      <div>
+      <div style={{ marginTop: "40px" }}>
         <Comment
           comment={comment}
           setComment={setComment}
