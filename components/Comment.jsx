@@ -1,6 +1,7 @@
 import React, { Dispatch, SetStateAction } from "react";
 import useAuthStore from "../store/authStore";
 import { BiCommentX } from "react-icons/bi";
+import Image from "next/image";
 
 function Comment({
   comments,
@@ -23,20 +24,20 @@ function Comment({
                       <div className=" p-2 items-center" key={idx}>
                         <div className="flex items-start gap-3">
                           <div className="w-12 h-12">
-                            <img
+                            {/* <img
                               src={user.image}
                               alt="user-profile"
                               className="rounded-full cursor-pointer"
                               layout="responsive"
-                            />
-                            {/* <Image
+                            /> */}
+                            <Image
                               width={48}
                               height={48}
                               className="rounded-full cursor-pointer"
                               src={user.image}
                               alt="user-profile"
                               layout="responsive"
-                            /> */}
+                            />
                           </div>
 
                           <p className="flex cursor-pointer gap-1 items-center text-[18px] lowercase _name text-xs italic">

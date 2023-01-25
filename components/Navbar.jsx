@@ -9,6 +9,7 @@ import useAuthStore from "../store/authStore";
 import { AiOutlineLogout } from "react-icons/ai";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import Logo from "../public/assets/logo.png";
 
 function Navbar() {
   const { userProfile, addUser, removeUser } = useAuthStore();
@@ -29,7 +30,14 @@ function Navbar() {
     <div className="  flex justify-between items-center  border-gray-200 py-2  _navbar">
       <p className=" ">
         <Link href="/">
-          <img src="assets/logo.png" alt="Logo" layout="responsive" />
+          {/* <img src="assets/logo.png" alt="Logo" layout="responsive" /> */}
+          <Image
+            className="cursor-pointer"
+            src={Logo}
+            alt="logo"
+            width={321}
+            height={46}
+          ></Image>
         </Link>
       </p>
       <div>

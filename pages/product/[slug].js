@@ -48,7 +48,7 @@ function ProductDetails({ product, products }) {
   };
   return (
     <div>
-      <div style={{ marginTop: "80px" }}>
+      <div style={{ marginTop: "90px" }}>
         {userProfile ? (
           <>
             <button
