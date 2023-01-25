@@ -10,10 +10,9 @@ import useAuthStore from "../../store/authStore";
 function SearchTerm({ products }) {
   const { userProfile } = useAuthStore();
   const router = useRouter();
-  console.log(products);
   return (
     <div>
-      <div style={{ marginTop: "80px" }}>
+      <div style={{ marginTop: "90px" }}>
         {userProfile ? (
           <>
             <div>
