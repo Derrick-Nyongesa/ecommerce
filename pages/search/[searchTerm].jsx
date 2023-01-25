@@ -2,11 +2,22 @@ import React from "react";
 import { client } from "../../lib/client";
 import { Product } from "../../components";
 import NoResults from "../../components/NoResults";
+import { useRouter } from "next/router";
+import { AiOutlineLeft } from "react-icons/ai";
 
 function SearchTerm({ products }) {
+  const router = useRouter();
   console.log(products);
   return (
     <div style={{ marginTop: "80px" }}>
+      <button
+        type="button"
+        className="cart-heading"
+        onClick={() => router.back()}
+      >
+        <AiOutlineLeft />
+        <span className="heading">Go Back</span>
+      </button>
       {products?.length && (
         <div className="text-center text-2xl">
           <span

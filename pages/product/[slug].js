@@ -78,7 +78,12 @@ function ProductDetails({ product, products }) {
         </div>
 
         <div className="product-detail-desc">
-          <h1 style={{ fontWeight: "bold", fontSize: "1.5rem" }}>{name}</h1>
+          <h1
+            style={{ fontWeight: "bold", fontSize: "1.5rem" }}
+            className="fade-in-text"
+          >
+            {name}
+          </h1>
           <div className="reviews ">
             <div>
               <AiFillStar />
