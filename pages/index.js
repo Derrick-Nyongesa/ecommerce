@@ -30,7 +30,7 @@ export default function Home({ products, bannerData }) {
     <div>
       <div>
         {userProfile ? (
-          <div style={{ marginTop: "90px" }}>
+          <div style={{ marginTop: "110px" }}>
             <div>
               <HeroBanner
                 heroBanner={bannerData.length && bannerData[0]}

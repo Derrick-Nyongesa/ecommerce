@@ -16,9 +16,9 @@ function HeroBanner({ heroBanner }) {
         />
         <div className="banner-desc">
           <div className="desc">
-            <Link href="/">
+            {/* <Link href="/">
               <button type="button">{heroBanner.buttonText}</button>
-            </Link>
+            </Link> */}
             <br />
             <p style={{ color: "white" }} className="fade-in-text">
               {heroBanner.desc}
