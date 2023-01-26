@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import Cart from "./Cart";
@@ -29,6 +29,7 @@ function Navbar() {
       router.push(`/search/${searchValue}`);
     }
   };
+
   return (
     <div className="flex justify-between items-center  border-gray-200 py-2  _navbar">
       <div className="_menu">
@@ -103,10 +104,18 @@ function Navbar() {
                     <i className="uil uil-arrow-right"></i>
                   </a>
 
-                  <a href="#">
-                    {" "}
-                    <FaSave />
-                    Saved Items <i className="uil uil-arrow-right"></i>
+                  <a>
+                    <Link href={`/profile/${userProfile._id}`}>
+                      <div className="flex">
+                        <span className="mt-3">
+                          <FaSave />
+                        </span>
+
+                        <span className="ml-7 mb-3">
+                          Saved Items <i className="uil uil-arrow-right"></i>
+                        </span>
+                      </div>
+                    </Link>
                   </a>
                   <a
                     href="#"
