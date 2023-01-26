@@ -47,5 +47,16 @@ export default {
       type: 'array',
       of: [{type: 'comment'}],
     },
+    {
+      name: 'likes',
+      title: 'Likes',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{type: 'user'}],
+        },
+      ],
+    },
   ],
 }

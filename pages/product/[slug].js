@@ -15,6 +15,7 @@ import useAuthStore from "../../store/authStore";
 import { useRouter } from "next/router";
 import Comment from "../../components/Comment";
 import OnBoarding from "../../components/OnBoarding";
+import LikeBtn from "../../components/LikeBtn";
 
 function ProductDetails({ product, products }) {
   const { image, name, details, price, comments } = product;
@@ -41,6 +42,17 @@ function ProductDetails({ product, products }) {
     }
   };
 
+  const handleLike = async (like) => {
+    if (userProfile) {
+      const res = await axios.put(`${BASE_URL}/api/like`, {
+        userId: userProfile._id,
+        postId: product._id,
+        like,
+      });
+      setPost({ ...post, likes: res.data.likes });
+    }
+  };
+
   const handleBuyNow = () => {
     onAdd(product, qty);
 
@@ -48,7 +60,7 @@ function ProductDetails({ product, products }) {
   };
   return (
     <div>
-      <div style={{ marginTop: "90px" }}>
+      <div style={{ marginTop: "60px" }}>
         {userProfile ? (
           <>
             <button
@@ -114,6 +126,21 @@ function ProductDetails({ product, products }) {
                 <p style={{ color: "gray", fontSize: "12px" }}>
                   Few Units left
                 </p>
+                <div className=" ">
+                  <div className="flex">
+                    <p>Save this item to shop later?</p>
+                    <span>
+                      {userProfile && (
+                        <LikeBtn
+                          likes={post.likes}
+                          flex="flex"
+                          handleLike={() => handleLike(true)}
+                          handleDislike={() => handleLike(false)}
+                        />
+                      )}
+                    </span>
+                  </div>
+                </div>
                 <div className="">
                   <h3>Quantity:</h3>
                   <div className="quantity flex justify-between items-center">
