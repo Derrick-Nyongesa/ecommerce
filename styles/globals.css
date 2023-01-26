@@ -822,11 +822,15 @@ span.text-red {
 
 ._searchBar {
   border-color: rgb(134, 134, 134);
-  color: #ea384d;
+  color: #f02d34;
 }
 
 ._searchIcon {
-  color: #ea384d;
+  color: #f02d34;
+}
+
+._share:hover {
+  color: #f02d34;
 }
 
 .success_ {

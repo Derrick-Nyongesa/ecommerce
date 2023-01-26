@@ -16,6 +16,8 @@ import { useRouter } from "next/router";
 import Comment from "../../components/Comment";
 import OnBoarding from "../../components/OnBoarding";
 import LikeBtn from "../../components/LikeBtn";
+import { RWebShare } from "react-web-share";
+import { FaShareAlt } from "react-icons/fa";
 
 function ProductDetails({ product, products }) {
   const { image, name, details, price, comments } = product;
@@ -123,26 +125,9 @@ function ProductDetails({ product, products }) {
                 </div>
 
                 <p className="price">${price}</p>
-                <p style={{ color: "gray", fontSize: "12px" }}>
-                  Few Units left
-                </p>
-                <div className=" ">
-                  <div className="flex">
-                    <p>Save this item to shop later?</p>
-                    <span>
-                      {userProfile && (
-                        <LikeBtn
-                          likes={post.likes}
-                          flex="flex"
-                          handleLike={() => handleLike(true)}
-                          handleDislike={() => handleLike(false)}
-                        />
-                      )}
-                    </span>
-                  </div>
-                </div>
-                <div className="">
-                  <h3>Quantity:</h3>
+
+                <div className="flex">
+                  <h3 className="mt-6 mr-4">Quantity:</h3>
                   <div className="quantity flex justify-between items-center">
                     <span className="minus" onClick={decQty}>
                       <AiOutlineMinus />
@@ -169,8 +154,43 @@ function ProductDetails({ product, products }) {
                     Buy Now
                   </button>
                 </div>
+                <br />
+
+                <div className="flex">
+                  <p>Save this product to shop later?</p>
+                  <span>
+                    {userProfile && (
+                      <LikeBtn
+                        likes={post.likes}
+                        flex="flex"
+                        handleLike={() => handleLike(true)}
+                        handleDislike={() => handleLike(false)}
+                      />
+                    )}
+                  </span>
+                </div>
+                <div className="flex">
+                  <p style={{ color: "gray", fontSize: "12px" }}>
+                    Share this product
+                  </p>
+                  <div className="ml-4 mt-2 _share">
+                    <RWebShare
+                      data={{
+                        text: "Web Share - GfG",
+                        url: `${BASE_URL}/product/${product.slug.current}`,
+                        title: "Share this product?",
+                      }}
+                      onClick={() => console.log("shared successfully!")}
+                    >
+                      <button className="_shareButton">
+                        <FaShareAlt></FaShareAlt>{" "}
+                      </button>
+                    </RWebShare>
+                  </div>
+                </div>
               </div>
             </div>
+            <div className="_shareIcon "></div>
             <p style={{ fontSize: "1.6rem", textAlign: "center" }}>
               Product Details
             </p>
