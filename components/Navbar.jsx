@@ -35,9 +35,20 @@ function Navbar() {
       <div className="_menu">
         <HiOutlineMenu className="_menuBtn" />
         <div className="dropdown-content">
-          <a href="#">Help Center</a>
-          <a href="#">Shipping & Delivery Information</a>
-          <a href="#">Returns & Refunds</a>
+          <a>
+            {" "}
+            <Link href="/help/CustomerSupport">Customer Support</Link>{" "}
+          </a>
+          <a>
+            {" "}
+            <Link href="/help/Shipping&Delivery">
+              Shipping & Delivery Information
+            </Link>{" "}
+          </a>
+          <a>
+            {" "}
+            <Link href="/help/Returns&Refunds">Returns & Refunds</Link>{" "}
+          </a>
           <a href="#">Warranty Policy</a>
           <a href="#">Order Tracking</a>
           <a href="#">Wishlist</a>
