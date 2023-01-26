@@ -10,8 +10,9 @@ import { AiOutlineLogout } from "react-icons/ai";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import Logo from "../public/assets/logo.png";
-import { FaUserAlt } from "react-icons/fa";
+import { FaUserAlt, FaSave } from "react-icons/fa";
 import { HiOutlineMenu } from "react-icons/hi";
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 
 function Navbar() {
   const { userProfile, addUser, removeUser } = useAuthStore();
@@ -32,7 +33,7 @@ function Navbar() {
     <div className="flex justify-between items-center  border-gray-200 py-2  _navbar">
       <div className="_menu">
         <HiOutlineMenu className="_menuBtn" />
-        <div class="dropdown-content">
+        <div className="dropdown-content">
           <a href="#">Help Center</a>
           <a href="#">Shipping & Delivery Information</a>
           <a href="#">Returns & Refunds</a>
@@ -73,65 +74,53 @@ function Navbar() {
                 </button>
               </form>
             </div>
-            <div className="dropdown">
-              <input type="checkbox" id="dropdown" />
+            <div className="_dropdown">
+              <input
+                className="dark-light"
+                type="checkbox"
+                id="dark-light"
+                name="dark-light"
+              />
 
-              <label className="dropdown__face mt-2" for="dropdown">
-                <div className="dropdown__text">Account</div>
+              <div className="sec-center mt-2">
+                <input
+                  className="dropdown"
+                  type="checkbox"
+                  id="dropdown"
+                  name="dropdown"
+                />
+                <label className="for-dropdown" for="dropdown">
+                  Account{" "}
+                  <i className="uil uil-arrow-down">
+                    <MdOutlineKeyboardArrowDown />
+                  </i>
+                </label>
+                <div className="section-dropdown">
+                  <a href="#">
+                    {" "}
+                    <FaUserAlt />
+                    {userProfile.userName}{" "}
+                    <i className="uil uil-arrow-right"></i>
+                  </a>
 
-                <div className="dropdown__arrow"></div>
-              </label>
-
-              <ul className="dropdown__items">
-                <li
-                  className="flex items-center gap-2"
-                  style={{
-                    marginBottom: "5px",
-                    color: "#f02d34",
-                    fontWeight: "bold",
-                  }}
-                >
-                  <FaUserAlt />
-                  <span>{userProfile.userName}</span>
-                </li>
-                <li>
-                  <button className="text-white px-2 md:px-4 text-md font-semibold flex items-center gap-2 _button">
-                    Saved Items
-                  </button>
-                </li>
-
-                <li>
-                  <button
+                  <a href="#">
+                    {" "}
+                    <FaSave />
+                    Saved Items <i className="uil uil-arrow-right"></i>
+                  </a>
+                  <a
+                    href="#"
                     onClick={() => {
                       googleLogout();
                       removeUser();
                     }}
-                    className=" text-white px-2 md:px-4 text-md font-semibold flex items-center gap-2 _button"
                   >
-                    <AiOutlineLogout className="_logout_" />
-                    <span className="hidden md:block ">Sign Out </span>
-                  </button>
-                </li>
-              </ul>
-            </div>
-
-            <div className="svg">
-              <svg>
-                <filter id="goo">
-                  <feGaussianBlur
-                    in="SourceGraphic"
-                    stdDeviation="10"
-                    result="blur"
-                  />
-                  <feColorMatrix
-                    in="blur"
-                    type="matrix"
-                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                    result="goo"
-                  />
-                  <feBlend in="SourceGraphic" in2="goo" />
-                </filter>
-              </svg>
+                    {" "}
+                    <AiOutlineLogout />
+                    Sign Out <i className="uil uil-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         )}
