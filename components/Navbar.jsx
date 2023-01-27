@@ -31,7 +31,7 @@ function Navbar() {
   };
 
   return (
-    <div className="flex justify-between items-center  border-gray-200 py-2  _navbar">
+    <div className="w-full flex justify-between items-center  border-gray-200 py-2  _navbar">
       <div className="_menu">
         <HiOutlineMenu className="_menuBtn" />
         <div className="dropdown-content">
@@ -58,19 +58,21 @@ function Navbar() {
 
       <Link href="/">
         {/* <img src="assets/logo.png" alt="Logo" layout="responsive" /> */}
-        <Image
-          className="cursor-pointer"
-          src={Logo}
-          alt="logo"
-          width={321}
-          height={46}
-        ></Image>
+        <div className="w-[221px] md:w-[321px] md:h-[46px] h-[46px] ">
+          <Image
+            className="cursor-pointer"
+            src={Logo}
+            alt="logo"
+            width={321}
+            height={46}
+          ></Image>
+        </div>
       </Link>
 
       <div>
         {userProfile && (
           <div className="flex gap-5 md:gap-10 ">
-            <div className=" ">
+            <div className="relative hidden md:block ">
               <form className="flex gap-4" onSubmit={handleSearch}>
                 <input
                   value={searchValue}
