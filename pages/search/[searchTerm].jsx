@@ -12,7 +12,7 @@ function SearchTerm({ products }) {
   const router = useRouter();
   return (
     <div>
-      <div style={{ marginTop: "90px" }}>
+      <div style={{ marginTop: "60px" }}>
         {userProfile ? (
           <>
             <div>

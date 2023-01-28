@@ -56,15 +56,12 @@ function Navbar() {
       </div>
 
       <Link href="/">
-        {/* <img src="assets/logo.png" alt="Logo" layout="responsive" /> */}
         <div className="w-[221px] md:w-[321px] md:h-[46px] h-[46px]  __logo">
-          <Image
-            className="cursor-pointer"
-            src={Logo}
-            alt="logo"
-            width={321}
-            height={46}
-          ></Image>
+          <img
+            src="https://user-images.githubusercontent.com/78686755/215276355-d25aefdc-2034-4d3e-b59a-4265bc938f6e.png"
+            alt="Logo"
+            layout="responsive"
+          />
         </div>
       </Link>
 
@@ -109,14 +106,14 @@ function Navbar() {
                   </i>
                 </label>
                 <div className="section-dropdown">
-                  <a href="#">
+                  <a>
                     {" "}
                     <FaUserAlt />
                     {userProfile.userName}{" "}
                     <i className="uil uil-arrow-right"></i>
                   </a>
 
-                  <a>
+                  <a style={{ cursor: "pointer" }}>
                     <Link href={`/profile/${userProfile._id}`}>
                       <div className="flex">
                         <span className="mt-3">
@@ -130,7 +127,7 @@ function Navbar() {
                     </Link>
                   </a>
                   <a
-                    href="#"
+                    style={{ cursor: "pointer" }}
                     onClick={() => {
                       googleLogout();
                       removeUser();
