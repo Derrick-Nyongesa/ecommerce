@@ -959,6 +959,21 @@ span.text-red {
   );
 }
 
+.box {
+  width: 160px;
+  height: 50px;
+  /* border: 1px solid #999; */
+  font-size: 18px;
+  color: #fff;
+  background-color: #324d67;
+  border-radius: 5px;
+  box-shadow: 4px 4px #ccc;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+}
+
 /* ======================================================================================= */
 /*                                      DROPDOWN                                        */
 /* ===================================================================================== */
