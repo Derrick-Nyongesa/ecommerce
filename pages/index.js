@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import { useState } from "react";
 import { BiSearch } from "react-icons/bi";
 import OnBoarding from "../components/OnBoarding";
+import { ImageData } from "../json/JsonData";
 
 export default function Home({ products, bannerData }) {
   const { userProfile, addUser, removeUser } = useAuthStore();
@@ -33,7 +34,8 @@ export default function Home({ products, bannerData }) {
           <div style={{ marginTop: "60px" }}>
             <div>
               <HeroBanner
-                heroBanner={bannerData.length && bannerData[0]}
+                ImageData={ImageData}
+                SlideInterValTime={3000}
               ></HeroBanner>
             </div>
 
