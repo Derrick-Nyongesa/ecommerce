@@ -1,21 +1,16 @@
 import { Product, HeroBanner, FooterBanner } from "../components";
 import { client } from "../lib/client";
-import { GoogleLogin } from "@react-oauth/google";
-import { createOrGetUser } from "../utils/index";
 import useAuthStore from "../store/authStore";
 import Discover from "../components/Discover";
 import { useRouter } from "next/router";
 import { useState } from "react";
-import { BiSearch } from "react-icons/bi";
 import OnBoarding from "../components/OnBoarding";
 import { ImageData } from "../json/JsonData";
 import React from "react";
 
 export default function Home({ products, bannerData }) {
-  const { userProfile, addUser, removeUser } = useAuthStore();
-  const [searchValue, setSearchValue] = useState("");
+  const { userProfile } = useAuthStore();
   const [postNum, setPostNum] = useState(4);
-  const router = useRouter();
 
   const [objectsToShow, setToShow] = React.useState(products);
 
@@ -66,13 +61,6 @@ export default function Home({ products, bannerData }) {
     setPostNum((prevPostNum) => prevPostNum + 4); // 3 is the number of posts you want to load per click
   }
 
-  const handleSearch = (e) => {
-    e.preventDefault();
-
-    if (searchValue) {
-      router.push(`/search/${searchValue}`);
-    }
-  };
   return (
     <div>
       <div>
