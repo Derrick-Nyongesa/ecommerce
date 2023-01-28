@@ -890,7 +890,8 @@ span.text-red {
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #f02d34;
+  color: #fff;
 }
 
 ._menu:hover .dropdown-content {

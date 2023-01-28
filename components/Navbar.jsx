@@ -49,10 +49,9 @@ function Navbar() {
             {" "}
             <Link href="/help/Returns&Refunds">Returns & Refunds</Link>{" "}
           </a>
-          <a href="#">Warranty Policy</a>
-          <a href="#">Order Tracking</a>
-          <a href="#">Wishlist</a>
-          <a href="#">Customer Support</a>
+          <a>
+            <Link href="/help/WarrantyPolicy">Warranty Policy</Link>{" "}
+          </a>
         </div>
       </div>
 
