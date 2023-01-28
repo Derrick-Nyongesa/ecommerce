@@ -58,7 +58,7 @@ function Navbar() {
 
       <Link href="/">
         {/* <img src="assets/logo.png" alt="Logo" layout="responsive" /> */}
-        <div className="w-[221px] md:w-[321px] md:h-[46px] h-[46px] ">
+        <div className="w-[221px] md:w-[321px] md:h-[46px] h-[46px]  __logo">
           <Image
             className="cursor-pointer"
             src={Logo}
@@ -73,7 +73,7 @@ function Navbar() {
         {userProfile && (
           <div className="flex gap-5 md:gap-10 ">
             <div className="relative hidden md:block ">
-              <form className="flex gap-4" onSubmit={handleSearch}>
+              <form className="flex gap-4 __search" onSubmit={handleSearch}>
                 <input
                   value={searchValue}
                   onChange={(e) => setSearchValue(e.target.value)}
