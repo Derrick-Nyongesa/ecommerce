@@ -62,7 +62,7 @@ function HeroBanner(props) {
               <img
                 src={ImageSrc}
                 alt="headphones"
-                className="hero-banner-image animated bounceInUp"
+                className="hero-banner-image animated bounceInLeft"
               />
               <div className="banner-desc">
                 <div className="desc">
