@@ -28,6 +28,19 @@ function ProductDetails({ product, products }) {
   const [post, setPost] = useState(product);
   const { userProfile } = useAuthStore();
   const router = useRouter();
+  const [headerClassName, setHeaderClassName] = useState("");
+
+  const handleScroll = (headerClassName) => {
+    if (headerClassName !== "fade-in-text" && window.pageYOffset >= 100) {
+      setHeaderClassName("fade-in-text");
+    } else if (headerClassName === "fade-in-text" && window.pageYOffset < 100) {
+      setHeaderClassName("");
+    }
+  };
+
+  useEffect(() => {
+    window.onscroll = () => handleScroll(headerClassName);
+  }, [headerClassName]);
 
   const addComment = async (e) => {
     e.preventDefault();
@@ -100,7 +113,7 @@ function ProductDetails({ product, products }) {
               <div className="product-detail-desc">
                 <h1
                   style={{ fontWeight: "bold", fontSize: "1.5rem" }}
-                  className="fade-in-text"
+                  className="fade-in-title"
                 >
                   {name}
                 </h1>
@@ -200,6 +213,7 @@ function ProductDetails({ product, products }) {
                 marginLeft: "20px",
                 marginRight: "20px",
               }}
+              className={headerClassName}
             >
               {details}
             </p>

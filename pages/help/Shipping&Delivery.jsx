@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 function ShippingandDelivery() {
   const router = useRouter();
   return (
-    <div style={{ marginTop: "80px" }}>
+    <div style={{ marginTop: "80px" }} className="fade-in-text">
       <button
         type="button"
         className="cart-heading"

@@ -19,7 +19,10 @@ function CustomerSupport() {
         <AiOutlineLeft />
         <span className="heading">Go Back</span>
       </button>
-      <div style={{ width: "50%", margin: "auto", marginBottom: "40px" }}>
+      <div
+        style={{ width: "50%", margin: "auto", marginBottom: "40px" }}
+        className="fade-in-text"
+      >
         <h1 style={{ textAlign: "center", fontSize: "2rem" }}>
           Customer Support
         </h1>

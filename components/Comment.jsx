@@ -67,8 +67,8 @@ function Comment({
           )}
         </div>
         {userProfile && (
-          <div className="flex flex-col justify-center items-center h-full w-full pb-7 ">
-            <form onSubmit={addComment} className="flex gap-4">
+          <div className="flex flex-col justify-center items-center  pb-7 ">
+            <form onSubmit={addComment} className="flex gap-4 _commentsForm">
               <input
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
