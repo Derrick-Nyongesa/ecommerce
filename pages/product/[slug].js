@@ -20,15 +20,14 @@ import { RWebShare } from "react-web-share";
 import { FaShareAlt } from "react-icons/fa";
 
 function ProductDetails({ product, products }) {
-  const { image, name, details, price } = product;
+  const { image, name, details, price, comments } = product;
   const [index, setIndex] = useState(0);
   const { decQty, incQty, qty, onAdd, setShowCart } = useStateContext();
   const [comment, setComment] = useState("");
-
+  const [isPostingComment, setIsPostingComment] = useState(false);
+  const [post, setPost] = useState(product);
   const { userProfile } = useAuthStore();
   const router = useRouter();
-
-  //ANIMATION ON SCROLL
   const [headerClassName, setHeaderClassName] = useState("");
 
   const handleScroll = (headerClassName) => {
@@ -42,10 +41,6 @@ function ProductDetails({ product, products }) {
   useEffect(() => {
     window.onscroll = () => handleScroll(headerClassName);
   }, [headerClassName]);
-
-  // POST COMMENT
-  const [isPostingComment, setIsPostingComment] = useState(false);
-  const [post, setPost] = useState(product);
 
   const addComment = async (e) => {
     e.preventDefault();
@@ -61,8 +56,6 @@ function ProductDetails({ product, products }) {
       setIsPostingComment(false);
     }
   };
-
-  //SAVE/LIKE
 
   const handleLike = async (like) => {
     if (userProfile) {

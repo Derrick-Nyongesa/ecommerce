@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import useAuthStore from "../store/authStore";
 import { BiCommentX } from "react-icons/bi";
 import Image from "next/image";
@@ -24,6 +24,12 @@ function Comment({
                       <div className=" p-2 items-center" key={idx}>
                         <div className="flex items-start gap-3">
                           <div className="w-12 h-12">
+                            {/* <img
+                              src={user.image}
+                              alt="user-profile"
+                              className="rounded-full cursor-pointer"
+                              layout="responsive"
+                            /> */}
                             <Image
                               width={48}
                               height={48}
