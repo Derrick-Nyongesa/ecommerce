@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 import { BsBagCheckFill } from "react-icons/bs";
 import { useStateContext } from "../context/StateContext";
-import { randomInRange } from "../lib/utils";
 
 function Success() {
   const { setCartItems, setTotalPrice, setTotalQuantities } = useStateContext();
@@ -11,7 +10,6 @@ function Success() {
     setCartItems([]);
     setTotalPrice(0);
     setTotalQuantities(0);
-    randomInRange();
   }, []);
   return (
     <div className="success-wrapper">
