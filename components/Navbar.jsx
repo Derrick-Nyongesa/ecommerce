@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import { HiOutlineShoppingCart } from "react-icons/hi";
 import Cart from "./Cart";
@@ -7,18 +7,17 @@ import { GoogleLogin, googleLogout } from "@react-oauth/google";
 import { createOrGetUser } from "../utils/index";
 import useAuthStore from "../store/authStore";
 import { AiOutlineLogout } from "react-icons/ai";
-import Image from "next/image";
 import { useRouter } from "next/router";
-import Logo from "../public/assets/logo.png";
 import { FaUserAlt, FaSave } from "react-icons/fa";
 import { HiOutlineMenu } from "react-icons/hi";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import OnBoarding from "./OnBoarding";
 
 function Navbar() {
   const { userProfile, addUser, removeUser } = useAuthStore();
   const { showCart, setShowCart, totalQuantities } = useStateContext();
   const router = useRouter();
+
+  // SEARCH
   const [searchValue, setSearchValue] = useState("");
   const [isSearching, setIsSearching] = useState(false);
 

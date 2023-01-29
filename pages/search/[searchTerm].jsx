@@ -4,11 +4,8 @@ import { Navbar, Product } from "../../components";
 import NoResults from "../../components/NoResults";
 import { useRouter } from "next/router";
 import { AiOutlineLeft } from "react-icons/ai";
-import OnBoarding from "../../components/OnBoarding";
-import useAuthStore from "../../store/authStore";
 
 function SearchTerm({ products }) {
-  const { userProfile } = useAuthStore();
   const router = useRouter();
   return (
     <div>

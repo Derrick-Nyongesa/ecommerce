@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import { urlFor } from "../lib/client";
 
 function HeroBanner(props) {
+  // SLIDESHOW
   const SliderProperty = {
     name: "",
     product: "",
@@ -72,9 +71,6 @@ function HeroBanner(props) {
                       <span className="fold"></span>
                     </aside>
                   </div>
-                  {/* <Link href="/">
-              <button type="button">{heroBanner.buttonText}</button>
-            </Link> */}
                   <br />
                   <p style={{ color: "white" }}>{desc}</p>
                 </div>

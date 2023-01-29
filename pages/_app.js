@@ -5,7 +5,6 @@ import { Toaster } from "react-hot-toast";
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import Router from "next/router";
 import React from "react";
-import OnBoarding from "../components/OnBoarding";
 
 export default function App({ Component, pageProps }) {
   const [loading, setLoading] = React.useState(false);

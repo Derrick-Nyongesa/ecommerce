@@ -1,11 +1,6 @@
 import React, { useRef } from "react";
 import Link from "next/link";
-import {
-  AiOutlineMinus,
-  AiOutlinePlus,
-  AiOutlineLeft,
-  AiOutlineShopping,
-} from "react-icons/ai";
+import { AiOutlineLeft, AiOutlineShopping } from "react-icons/ai";
 import { MdDelete } from "react-icons/md";
 import toast from "react-hot-toast";
 import { useStateContext } from "../context/StateContext";

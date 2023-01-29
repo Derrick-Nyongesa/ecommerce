@@ -5,7 +5,7 @@ import { createOrGetUser } from "../utils/index";
 import Link from "next/link";
 
 function OnBoarding() {
-  const { userProfile, addUser, removeUser } = useAuthStore();
+  const { addUser } = useAuthStore();
   return (
     <div>
       <main style={{ height: "100vh" }}>

@@ -14,7 +14,6 @@ function Layout({ children }) {
           href="/icon_.jpg"
         ></link>
       </Head>
-      {/* <header><Navbar /></header> */}
       <main className="main-container">{children}</main>
       <footer>
         <Footer />

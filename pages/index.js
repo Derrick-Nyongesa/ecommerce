@@ -1,16 +1,12 @@
 import { Product, HeroBanner, Navbar } from "../components";
 import { client } from "../lib/client";
-import useAuthStore from "../store/authStore";
 import Discover from "../components/Discover";
-import { useRouter } from "next/router";
 import { useState } from "react";
-import OnBoarding from "../components/OnBoarding";
 import { ImageData } from "../json/JsonData";
 import React from "react";
 
 export default function Home({ products, bannerData }) {
-  const { userProfile } = useAuthStore();
-  const [postNum, setPostNum] = useState(4);
+  // FILTER PRODUCTS
 
   const [objectsToShow, setToShow] = React.useState(products);
 
@@ -57,8 +53,11 @@ export default function Home({ products, bannerData }) {
     }
   };
 
+  // DISPLAY 4 PRODUCTS PER CLICK
+  const [postNum, setPostNum] = useState(4);
+
   function handleClick() {
-    setPostNum((prevPostNum) => prevPostNum + 4); // 3 is the number of posts you want to load per click
+    setPostNum((prevPostNum) => prevPostNum + 4);
   }
 
   return (
@@ -108,9 +107,6 @@ export default function Home({ products, bannerData }) {
                     <Product key={product._id} product={product} />
                   </p>
                 ))}
-                {/* {products.slice(0, postNum).map((product) => (
-                    <Product key={product._id} product={product} />
-                  ))} */}
               </div>
               <div className="flex gap-10 flex-wrap items-center justify-center">
                 <button onClick={handleClick} className="_load">
