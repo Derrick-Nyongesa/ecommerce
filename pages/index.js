@@ -1,4 +1,4 @@
-import { Product, HeroBanner, FooterBanner } from "../components";
+import { Product, HeroBanner, Navbar } from "../components";
 import { client } from "../lib/client";
 import useAuthStore from "../store/authStore";
 import Discover from "../components/Discover";
@@ -63,66 +63,63 @@ export default function Home({ products, bannerData }) {
 
   return (
     <div>
+      <Navbar></Navbar>
       <div>
-        {userProfile ? (
-          <div style={{ marginTop: "60px" }}>
-            <div>
-              <HeroBanner
-                ImageData={ImageData}
-                SlideInterValTime={3000}
-              ></HeroBanner>
-            </div>
+        <div style={{ marginTop: "60px" }}>
+          <div>
+            <HeroBanner
+              ImageData={ImageData}
+              SlideInterValTime={3000}
+            ></HeroBanner>
+          </div>
 
-            <div className="products-heading">
-              <h2>Best Seller Products</h2>
-              <p>
-                Online Shopping with JSM Heaphones - Africa's No 1 Online Store
-              </p>
-            </div>
+          <div className="products-heading">
+            <h2>Best Seller Products</h2>
+            <p>
+              Online Shopping with JSM Heaphones - Africa's No 1 Online Store
+            </p>
+          </div>
+          <div>
             <div>
-              <div>
-                <Discover></Discover>
-              </div>
-              <div
-                className="flex"
-                style={{ width: "25%", margin: "auto", marginTop: "30px" }}
+              <Discover></Discover>
+            </div>
+            <div
+              className="flex"
+              style={{ width: "25%", margin: "auto", marginTop: "30px" }}
+            >
+              <p className="mr-5 mt-3">Filter Products</p>
+              <select
+                onChange={(e) => handleChange(e.target.value)}
+                className="box"
               >
-                <p className="mr-5 mt-3">Filter Products</p>
-                <select
-                  onChange={(e) => handleChange(e.target.value)}
-                  className="box"
-                >
-                  <option value="none">Default</option>
-                  <option value="ascending">Alphabetically: A-Z</option>
-                  <option value="descending">Alphabetically: Z-A</option>
-                  <option value="high">Price: Low to high</option>
-                  <option value="low">Price: High to low</option>
-                </select>
-              </div>
+                <option value="none">Default</option>
+                <option value="ascending">Alphabetically: A-Z</option>
+                <option value="descending">Alphabetically: Z-A</option>
+                <option value="high">Price: Low to high</option>
+                <option value="low">Price: High to low</option>
+              </select>
+            </div>
 
-              <div className="h-[2vh] overflow-hidden xl:hover:overflow-auto"></div>
-              <div className=" overflow-auto h-[88vh] w-[95vw] ">
-                <div className="products-container ">
-                  {objectsToShow.slice(0, postNum).map((product) => (
-                    <p key={product.name}>
-                      <Product key={product._id} product={product} />
-                    </p>
-                  ))}
-                  {/* {products.slice(0, postNum).map((product) => (
+            <div className="h-[2vh] overflow-hidden xl:hover:overflow-auto"></div>
+            <div className=" overflow-auto h-[88vh] w-[95vw] ">
+              <div className="products-container ">
+                {objectsToShow.slice(0, postNum).map((product) => (
+                  <p key={product.name}>
+                    <Product key={product._id} product={product} />
+                  </p>
+                ))}
+                {/* {products.slice(0, postNum).map((product) => (
                     <Product key={product._id} product={product} />
                   ))} */}
-                </div>
-                <div className="flex gap-10 flex-wrap items-center justify-center">
-                  <button onClick={handleClick} className="_load">
-                    Load More...
-                  </button>
-                </div>
+              </div>
+              <div className="flex gap-10 flex-wrap items-center justify-center">
+                <button onClick={handleClick} className="_load">
+                  Load More...
+                </button>
               </div>
             </div>
           </div>
-        ) : (
-          <OnBoarding></OnBoarding>
-        )}
+        </div>
       </div>
     </div>
   );

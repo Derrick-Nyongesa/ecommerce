@@ -7,7 +7,7 @@ import {
   AiOutlineLeft,
 } from "react-icons/ai";
 import { client, urlFor } from "../../lib/client";
-import { Product } from "../../components";
+import { Navbar, Product } from "../../components";
 import { useStateContext } from "../../context/StateContext";
 import axios from "axios";
 import { BASE_URL } from "../../utils";
@@ -75,6 +75,7 @@ function ProductDetails({ product, products }) {
   };
   return (
     <div>
+      <Navbar />
       <div style={{ marginTop: "60px" }}>
         {userProfile ? (
           <>
