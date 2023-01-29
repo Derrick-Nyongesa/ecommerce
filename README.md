@@ -1,3 +1,19 @@
+# eCommerce Web Application
+
+![developer](https://img.shields.io/badge/Developer-Derrick%20Daniel%20Nyongesa-blue)
+
+## Known Bugs
+
+- The may load very slowly be patient.
+
+## Contact Information
+
+Any query? Contact me at [nyongesaderrick@gmail.com]
+
+## Copyright and license information
+
+Licensed under the [MIT license](LICENSE).
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
